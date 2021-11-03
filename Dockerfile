@@ -15,6 +15,6 @@ RUN set -eux; \
     && \
     npm install -g yo \
     && \
-    chmod g+rwx /root /root/.config /root/.config/configstore
+    chmod -R g+rwx /root /root/.config
 
 CMD ["yo"]
