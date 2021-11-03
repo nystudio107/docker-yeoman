@@ -13,6 +13,8 @@ RUN set -eux; \
     # Clean out directories that don't need to be part of the image
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && \
-    npm install -g yo
+    npm install -g yo \
+    && \
+    chmod g+rwx /root /root/.config /root/.config/configstore
 
 CMD ["yo"]
