@@ -17,6 +17,8 @@ RUN set -eux; \
     && \
     mkdir -p /root/.config/configstore \
     && \
-    chmod -R g+rwx /root /root/.config /root/.config/configstore
+    mkdir -p /root/.config/insight-nodejs \
+    && \
+    chmod -R g+rwx /root /root/.config
 
 CMD ["yo"]
