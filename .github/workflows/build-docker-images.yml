@@ -32,6 +32,8 @@ jobs:
           file: ./Dockerfile
           push: false
           platforms: linux/amd64,linux/arm64
-          tags: nystudio107/node-yeoman:${{ matrix.node }}-alpine
+          tags: |
+            nystudio107/node-yeoman:${{ matrix.node }}-alpine
+            ${{ matrix.node == 16 && 'nystudio107/node-yeoman:latest' }}
           build-args: |
             TAG=${{ matrix.node }}-alpine
