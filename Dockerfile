@@ -15,6 +15,6 @@ RUN set -eux; \
     && \
     npm install -g yo \
     && \
-    chmod -R g+rwx /root /root/.config
+    chmod -R g+rwx /root
 
 CMD ["yo"]
