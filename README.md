@@ -4,7 +4,7 @@ Docker images for node yeoman
 
 ## About Docker Yeoman
 
-This repo contains a Dockerfile that is used to build & push Docker images that contain the Yeoman command `yo`, so you can run it via Docker with whatever version of Node.js you require.
+This repo contains a Dockerfile that is used to build & push Docker images to [Docker Hub](https://hub.docker.com/repository/docker/nystudio107/node-yeoman) that contain the Yeoman command `yo`, so you can run it via Docker with whatever version of Node.js you require.
 
 The images are built "in the cloud" via GitHub actions:
 
