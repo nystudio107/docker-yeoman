@@ -12,6 +12,13 @@ jobs:
         node: ["12", "14", "16"]
     name: node-yeoman ${{ matrix.node }} images
     steps:
+      - name: Set version tag
+        run: |
+          echo "TAGS=nystudio107/node-yeoman:${{ matrix.node }}-alpine" >> $GITHUB_ENV
+      - name: Set latest tag
+        if: matrix.node == 16
+        run: |
+          echo "TAGS=$TAGS,nystudio107/node-yeoman:latest" >> $GITHUB_ENV
       - name: Check out the repository
         uses: actions/checkout@v2
       - name: Set up QEMU
@@ -32,6 +39,6 @@ jobs:
           file: ./Dockerfile
           push: false
           platforms: linux/amd64,linux/arm64
-          tags: nystudio107/node-yeoman:${{ matrix.node }}-alpine
+          tags: ${{ env.TAGS }}
           build-args: |
             TAG=${{ matrix.node }}-alpine
