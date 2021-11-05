@@ -10,3 +10,5 @@ The images are built "in the cloud" via GitHub actions:
 
 - When any changes are pushed to the `develop` branch, the images are rebuilt to ensure they build properly
 - When a new tagged release is pushed, the images are built, tagged, and pushed to Docker Hub
+
+Images are built for Node.js versions 12, 14 & 16, for both AMD (Intel) and ARM (Apple Silicon) architectures.
